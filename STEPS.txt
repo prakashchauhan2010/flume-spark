@@ -1,0 +1,10 @@
+flume-ng agent \
+-n stlog \
+--conf conf \
+--conf-file stlog.conf \
+-Dflume.root.logger=INFO,console
+
+spark2-submit \
+--class LogParser \
+--master yarn \
+/mnt/home/edureka_45354/flume/flume-spark/target/scala-2.11/scalakafkaproject_2.11-1.0.jar > /mnt/home/edureka_45354/flume/streaming_output.log
